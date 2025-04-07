@@ -1,1 +1,36 @@
-p some content
+include ../head.pug
+
+body
+  .container.mt-5
+    h1 yacht list
+    table.table.table-responsive.table-hover.table-striped.table-dark
+      thead
+        tr
+          th(scope="col") ID
+          th(scope="col") yacht name
+          th(scope="col") owner name
+          th(scope="col") length (ft)
+          th(scope="col") year built
+          th(scope="col") has pool?
+          th(scope="col") actions
+      tbody
+        tr
+          td 1
+          td serenity
+          td john doe
+          td 85
+          td 2019
+          td yes
+          td
+            button.btn.btn-primary.btn-sm edit
+            button.btn.btn-danger.btn-sm delete
+        tr
+          td 2
+          td ocean breeze
+          td jane smith
+          td 72
+          td 2021
+          td no
+          td
+            button.btn.btn-primary.btn-sm edit
+            button.btn.btn-danger.btn-sm delete

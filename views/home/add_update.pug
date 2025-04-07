@@ -1,0 +1,33 @@
+include ../head.pug
+
+body
+  .container.mt-5
+    h1 Add/Update Yacht
+    form(action="/submit-yacht-form" method="POST")
+      .mb-3
+        label(for="yachtName" class="form-label") Yacht Name
+        input(type="text" class="form-control" id="yachtName" name="yachtName" required)
+      
+      .mb-3
+        label(for="ownerName" class="form-label") Owner Name
+        input(type="text" class="form-control" id="ownerName" name="ownerName" required)
+      
+      .mb-3
+        label(for="length" class="form-label") Length (ft)
+        input(type="number" class="form-control" id="length" name="length" required)
+      
+      .mb-3
+        label(for="yearBuilt" class="form-label") Year Built
+        input(type="number" class="form-control" id="yearBuilt" name="yearBuilt" required)
+      
+      .mb-3
+        label(for="imageUrl" class="form-label") Image URL
+        input(type="url" class="form-control" id="imageUrl" name="imageUrl")
+
+      .mb-3
+        label(for="hasPool" class="form-label") Has Pool?
+        select(class="form-select" id="hasPool" name="hasPool" required)
+          option(value="true") Yes
+          option(value="false") No
+
+      button(type="submit" class="btn btn-primary") Add/Edit Yacht
