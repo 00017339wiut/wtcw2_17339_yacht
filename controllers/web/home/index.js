@@ -3,6 +3,5 @@ const home_controller = {
         res.render('home');
     }
 };
-
 module.exports = home_controller;
     
