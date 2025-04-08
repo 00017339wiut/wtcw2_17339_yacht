@@ -1,0 +1,86 @@
+body {
+    background: linear-gradient(to right, #ffe6f0, #e6f7ff);
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    background-color: #fff0f5;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #ff69b4;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #d63384;
+}
+
+input.form-control,
+.input-group-text {
+    border-radius: 12px;
+    border: 1px solid #ffc0cb;
+    padding: 10px 15px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+input.form-control:focus {
+    border-color: #ffb6c1;
+    box-shadow: 0 0 8px #ffb6c1;
+    outline: none;
+}
+
+.input-group-text {
+    background-color: #ffe4ec;
+    border-left: none;
+}
+
+.input-group-append {
+    cursor: pointer;
+}
+
+button.btn {
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success {
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+}
+
+.btn-success:hover {
+    background-color: #ff85c1;
+}
+
+.btn-primary {
+    background-color: #87cefa;
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #a3d6ff;
+}
+
+.mb-3 {
+    margin-bottom: 1.5rem;
+}

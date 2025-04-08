@@ -1,4 +1,7 @@
 include ../head.pug
+doctype html 
+head
+    link(rel='stylesheet' href="/css/styles.css")
 body
         .section-content
             .container.mt-5
@@ -18,6 +21,7 @@ body
                             th(scope="col") Owner Phone #
                             th(scope="col") Actions
                     tbody
+h3 This application was created to fulfill Web Technology module requirements and does not represent an actual company or service. Made by 17339.
 script.
     document.addEventListener('DOMContentLoaded', function() {
         axios.get('/api/yacht').then(function(response) {
@@ -45,7 +49,6 @@ script.
             console.log(error);
         });
 
-        // Use event delegation for delete buttons
         document.addEventListener('click', function(event) {
             if (event.target && event.target.classList.contains('btn-danger')) {
                 const yachtId = event.target.getAttribute('data-id');

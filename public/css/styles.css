@@ -1,0 +1,99 @@
+/* 🌸 Base page background and typography */
+body {
+    background: linear-gradient(to right, #ffe6f0, #e6f7ff);
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #fff0f5;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.2);
+    margin-bottom: 50px;
+}
+
+/* 🌸 Title styling */
+h1 {
+    color: #ff69b4;
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+h3 {
+    text-align: center;
+    color: #888;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+/* 🌸 Button styling */
+.btn-success {
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-weight: 500;
+}
+
+.btn-success:hover {
+    background-color: #ff85c1;
+}
+
+.btn-primary {
+    background-color: #87cefa;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    padding: 6px 14px;
+}
+
+.btn-primary:hover {
+    background-color: #a3d6ff;
+}
+
+.btn-danger {
+    background-color: #ff4d6d;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 14px;
+}
+
+.btn-danger:hover {
+    background-color: #ff7a8a;
+}
+
+/* 🌸 Table styling */
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+.table thead {
+    background-color: #ffd6e8;
+    color: #d63384;
+    font-weight: 600;
+}
+
+.table tbody {
+    background-color: #fff0f5;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #ffeef5;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #ffe4ec;
+}
+
+th,
+td {
+    vertical-align: middle;
+    text-align: center;
+}
