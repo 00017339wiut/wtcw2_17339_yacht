@@ -12,4 +12,5 @@ INSTRUCTIONS TO RUN THE APP LOCALLY:
 
 LINKS:
 -github repository: https://github.com/00017339wiut/wtcw2_17339_yacht.git 
--deployed on render: 
+-deployed on render: https://wtcw2-17339-yacht.onrender.com/ 
+The render link may take a bit to load due to the free tier being used to deploy. Howeer, it IS working. 
