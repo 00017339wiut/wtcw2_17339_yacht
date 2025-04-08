@@ -11,7 +11,7 @@ const path = require('path')
 const web_route = require('./routes/web')
 
 // make mock database (raw .json file) available globally in app
-global.mock_db = path.join(__dirname, './data/yachts_db.json');
+global.db = path.join(__dirname, './data/db.json');
 
 const app = express();
 
@@ -23,5 +23,5 @@ app.use('/js', express.static('public/js'))
 
 app.use('/', web_route); // web routes
 
-const port = 1439;
+const port = 2025;
 app.listen(port, () => console.log(`Server running on port ${port}`));
