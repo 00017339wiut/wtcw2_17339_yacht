@@ -1,0 +1,52 @@
+[
+    {
+        "id": "1111",
+        "yacht": {
+            "yachtType": "Motorboat",
+            "yachtName": "Lexy",
+            "addedDate": "01/01/2025 13:00",
+            "yachtLength": "220",
+            "ownerPhone": "+998111111111"
+        }
+    },
+    {
+        "id": "2222",
+        "yacht": {
+            "yachtType": "Sailboat",
+            "yachtName": "Cleopatra",
+            "addedDate": "01/01/2025 13:00",
+            "yachtLength": "14,000",
+            "ownerPhone": "+998222222222"
+        }
+    },
+    {
+        "id": "3333",
+        "yacht": {
+            "yachtType": "Flybridge",
+            "yachtName": "Worn",
+            "addedDate": "01/01/2025 13:00",
+            "yachtLength": "44",
+            "ownerPhone": "+998333333333"
+        }
+    },
+    {
+        "id": "4444",
+        "yacht": {
+            "yachtType": "Classic",
+            "yachtName": "Crater",
+            "addedDate": "01/01/2025 13:00",
+            "yachtLength": "2",
+            "ownerPhone": "+998444444444"
+        }
+    },
+    {
+        "id": "5555",
+        "yacht": {
+            "yachtType": "Expedition",
+            "yachtName": "Expedia",
+            "addedDate": "01/01/2025 13:00",
+            "yachtLength": "14",
+            "ownerPhone": "+998555555555"
+        }
+    }
+]

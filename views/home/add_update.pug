@@ -1,35 +1,77 @@
 include ../head.pug
+doctype html 
+head
+    link(rel='stylesheet' href='/css/forms.css')
 body
-  .container.mt-5
-    h1 add/update yachts
-    form(action="/submit-event-form" method="POST")
-      .mb-3
-        label(for="yachtName" class="form-label") yacht name
-        input(type="text" class="form-control" id="yachtName" name="yachtName" required)
-      .mb-3
-        label(for="yachtDateTime" class="form-label") yacht insertion date/time 
-        .input-group.date(id="datetimepicker1" data-target-input="nearest")
-          input(type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" name="yachtDateTime" required)
-          .input-group-append(data-target="#datetimepicker1" data-toggle="datetimepicker")
-            .input-group-text
-              i.fas.fa-calendar-alt
-      .mb-3
-        label(for="location" class="form-label") location
-        input(type="text" class="form-control" id="location" name="location" required)
-      .mb-3
-        label(for="ownerPhone" class="form-label") owner's contact phone #
-        input(type="tel" class="form-control" id="ownerPhone" name="ownerPhone" required)
-      .mb-3
-        label(for="accommodates" class="form-label") accommodates 
-        input(type="text" class="form-control" id="accommodates" name="accommodates" required)
-      button(type="submit" class="btn btn-primary") add/edit
+    .container.mt-5
+        h1 #{mode}
+        .mb-3
+            label(for="yachtType" class="form-label") Car Type
+            input(type="text" class="form-control" id="yachtType" name="yachtType" required)
+        .mb-3
+            label(for="yachtName" class="form-label") Car Name
+            input(type="text" class="form-control" id="yachtName" name="yachtName" required)
+        .mb-3
+            label(for="addedDate" class="form-label") Production Date
+            .input-group.date(id="datetimepicker1" data-target-input="nearest")
+                input(type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" id="addedDate" name="addedDate" required)
+                .input-group-append(data-target="#datetimepicker1" data-toggle="datetimepicker")
+                    .input-group-text
+                        i.fas.fa-calendar-alt
+        .mb-3
+            label(for="yachtLength" class="form-label") Car Miles
+            input(type="text" class="form-control" id="yachtLength" name="yachtLength" required)
+        .mb-3
+            label(for="ownerPhone" class="form-label") Contact Phone
+            input(type="tel" class="form-control" id="ownerPhone" name="ownerPhone" required)
+        button(type="submit" class="btn btn-success" onclick="submitForm()") #{mode === 'Update' ? 'Update' : 'Add'}
+        span &nbsp;
+        button(type="submit" class="btn btn-primary" onclick="window.location.href='/'") Back to list
 
-  script.
-      const picker = new tempusDominus.TempusDominus(document.getElementById('datetimepicker1'),{
-          localization: {
-            'locale': 'fr'
-          }
-      });
-      picker.dates.formatInput = function(date) {
-        return moment(date).format('DD/MM/YYYY HH:mm')
-      }
+    script.
+        const format = 'DD/MM/YYYY HH:mm'
+        const picker = new tempusDominus.TempusDominus(document.getElementById('datetimepicker1'),{
+            localization: {
+                'locale': 'fr'
+            }
+        })
+        picker.dates.formatInput = function(date) {
+            return moment(date).format(format)
+        }
+
+        if ("#{mode}" === "Update") {
+            const yachtData = !{JSON.stringify(yachtData || {})}.yacht;
+            document.getElementById('yachtName').value = yachtData.yachtName || '';
+
+            picker.dates.setValue(
+                new tempusDominus.DateTime(moment(yachtData.addedDate, format))
+            );
+
+            document.getElementById('yachtType').value = yachtData.yachtType || '';
+            document.getElementById('ownerPhone').value = yachtData.ownerPhone || '';
+            document.getElementById('yachtLength').value = yachtData.yachtLength || '';
+        }
+
+        function submitForm() {
+            const yachtData = {
+                yachtName: document.getElementById('yachtName').value,
+                addedDate: document.getElementById('addedDate').value,
+                yachtType: document.getElementById('yachtType').value,
+                ownerPhone: document.getElementById('ownerPhone').value,
+                yachtLength: document.getElementById('yachtLength').value,
+            };
+
+            const url = "#{mode}" === "Update" ? `/api/yacht/${!{JSON.stringify(yachtData || {})}.id}` : '/api/yacht';
+            const method = "#{mode}" === "Update" ? 'put' : 'post';
+
+            axios[method](url, yachtData).then(response => {
+                alert('Success!');
+                location.href = '/'
+            })
+            .catch(error => {
+                if(error.response)
+                    alert(JSON.stringify(error.response.data.errors))
+                else
+                    alert(error)
+            });
+        }
