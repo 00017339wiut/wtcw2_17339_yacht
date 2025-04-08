@@ -1,4 +1,4 @@
-[ 
+[
     {
         "id": 1,
         "yacht": {
@@ -6,6 +6,16 @@
             "yachtDateTime": "12/02/2024 19:00",
             "location": "Turkiston Palace",
             "ownerPhone": "712354440",
+            "accommodates": "14000"
+        }
+    },
+    {
+        "id": "vHOk",
+        "yacht": {
+            "yachtName": "yellow",
+            "yachtDateTime": "12/02/2024 19:00",
+            "location": "Turkiston Palace",
+            "ownerPhone": "+998947981800",
             "accommodates": "14000"
         }
     }
