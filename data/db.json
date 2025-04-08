@@ -1,1 +1,12 @@
-[]
+[ 
+    {
+        "id": 1,
+        "yacht": {
+            "yachtName": "purple",
+            "yachtDateTime": "12/02/2024 19:00",
+            "location": "Turkiston Palace",
+            "ownerPhone": "712354440",
+            "accommodates": "14000"
+        }
+    }
+]

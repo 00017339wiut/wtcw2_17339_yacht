@@ -23,3 +23,31 @@ body
               td
                 button.btn.btn-primary.btn-sm edit
                 button.btn.btn-danger.btn-sm delete
+script.
+  document.addEventListener('DOMContentLoaded', function() {
+    axios.get('/api/yacht')
+    .then(function(response) {
+      const yachts = response.data;
+      const tableBody = document.querySelector('table tbody');
+      yachts.forEach(y => {
+        const row = document.createElement('tr');
+        const yacht = y.yacht
+        row.innerHTML = `
+          <td>${y.id}</td>
+          <td>${yacht.yachtName}</td>
+          <td>${yacht.yachtDateTime}</td>
+          <td>${yacht.location}</td>
+          <td>${yacht.ownerPhone}</td>
+          <td>${yacht.accommodates}</td>
+          <td>
+            <button class="btn btn-primary btn-sm">edit</button>
+            <button class="btn btn-danger btn-sm">delete</button>
+          </td>
+        `;
+        tableBody.appendChild(row);
+      });
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  });
